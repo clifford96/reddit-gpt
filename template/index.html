@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddit Chatbot</title>
+  </head>
+  <body>
+    <h1>Reddit Chatbot</h1>
+    <form method="POST" action="{{ url_for('predict') }}">
+      <label for="question">Ask me anything:</label><br>
+      <input type="text" id="question" name="question" required><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    {% if response %}
+      <h3>Bot response:</h3>
+      <p>{{ response }}</p>
+    {% endif %}
+  </body>
+</html>
